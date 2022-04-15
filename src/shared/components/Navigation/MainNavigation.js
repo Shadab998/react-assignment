@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-
+import { BrowserView, MobileView } from 'react-device-detect';
 
 import MainHeader from './MainHeader';
 import NavLinks from './NavLinks';
@@ -9,19 +9,9 @@ import Backdrop from '../UIElements/Backdrop';
 
 import './MainNavigation.css';
 
-function debounce(fn, ms) {
-  let timer
-  return _ => {
-    clearTimeout(timer)
-    timer = setTimeout(_ => {
-      timer = null
-      fn.apply(this, arguments)
-    }, ms)
-  };
-}
-
 const MainNavigation = props => {
-  var className = "browser";
+
+  var className = props.className;
   const [drawerIsOpen, setDrawerIsOpen] = useState(false);
 
   const openDrawerHandler = () => {
@@ -31,40 +21,24 @@ const MainNavigation = props => {
   const closeDrawerHandler = () => {
     setDrawerIsOpen(false);
   };
-
-  const [dimensions, setDimensions] = useState({ 
-    height: window.innerHeight,
-    width: window.innerWidth
-  })
-  useEffect(() => {
-    const debouncedHandleResize = debounce(function handleResize() {
-      setDimensions({
-        height: window.innerHeight,
-        width: window.innerWidth
-      })
-    }, 50)
-
-    window.addEventListener('resize', debouncedHandleResize)
-
-    return _ => {
-      window.removeEventListener('resize', debouncedHandleResize)
-    
-}
-  })
-
-  if(dimensions.width < 768){
-    className = "mobile"
+  var content = null;
+  if (className === "browser"){
+    content = <><button className="main-navigation__menu-btn" onClick={openDrawerHandler}>
+      <span />
+      <span />
+      <span />
+    </button><h1 className="main-navigation__title">
+        <Link to="/">MentorPlus App</Link>
+      </h1></>
+  } else {
+    content = <><h1 className="main-navigation__title">
+      <Link to="/">MentorPlus App</Link>
+    </h1><button className="main-navigation__menu-btn" onClick={openDrawerHandler}>
+    <span />
+    <span />
+    <span />
+  </button></>
   }
-  else{
-    className = "browser"
-  }
-
-  // if(isMobile){
-  //   className = "mobile"
-  // }
-  // else {
-  //   className = "browser"
-  // }
   
   return (
     <React.Fragment>
@@ -74,20 +48,30 @@ const MainNavigation = props => {
           <NavLinks />
         </nav>
       </SideDrawer>
-      
+      <BrowserView>
       <MainHeader className = {className}>
+        {content}
+        <nav className="main-navigation__header-nav">
+          <NavLinks />
+        </nav>
+      </MainHeader>
+      </BrowserView>
+      <MobileView>
+      <MainHeader className = {className}>
+        <h1 className="main-navigation__title">
+          <Link to="/">MentorPlus App</Link>
+        </h1>
         <button className="main-navigation__menu-btn" onClick={openDrawerHandler}>
           <span />
           <span />
           <span />
         </button>
-        <h1 className="main-navigation__title">
-          <Link to="/">MentorPlus App</Link>
-        </h1>
+        
         <nav className="main-navigation__header-nav">
           <NavLinks />
         </nav>
       </MainHeader>
+      </MobileView>
     </React.Fragment>
   );
 };

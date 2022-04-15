@@ -10,6 +10,12 @@ body {
   margin: 0;
 }
 
-.main{
+.main-browser{
   margin-left: 32%;
+  margin-top: 2%;
+}
+
+.main-mobile{
+  margin-left: 2%;
+  margin-top: 5rem;
 }
