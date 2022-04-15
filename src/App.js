@@ -3,6 +3,7 @@ import React, { useState, useEffect }  from 'react';
 import {
   BrowserRouter as Router,
 } from 'react-router-dom';
+import HomePage from './home/pages/HomePage';
 
 import MainNavigation from './shared/components/Navigation/MainNavigation';
 
@@ -57,8 +58,10 @@ const App = () => {
     <Router>
       <MainNavigation className={className}/>
         <div className={classNameBody}>
-        <h1>Book Demo Session Slot</h1>
-        <h1>Home Page</h1>
+        <h1 style={{padding:"20px 0px 0px 0px"}}>Book Demo Session Slot</h1>
+        <div class="line"/>
+        <br/>
+        <HomePage/>
         </div>
     </Router>
 

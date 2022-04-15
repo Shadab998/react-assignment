@@ -19,3 +19,21 @@ body {
   margin-left: 2%;
   margin-top: 5rem;
 }
+
+.line {
+  background:#224f8e;
+  position:relative;
+  height:5px;
+  width: 40px;
+  border-radius: 10px;
+}
+.line:before {
+  content:'';
+  background:#db1b45;
+  width: 40px;
+  height:5px;
+  position:absolute;
+  top:0;
+  left:38px;
+  border-radius: 10px;
+}
