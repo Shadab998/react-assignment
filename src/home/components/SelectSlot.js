@@ -13,7 +13,7 @@ const SelectSlot = props => {
         {
           props.items.map((item,index) =>(
             (index === props.time_slot? item.available.map((time)=>(
-              <Button inverse to={`/`}>
+              <Button inverse>
                 {time.hour}{time.min===0 ?"":":"+time.min}{time.hour>12 ? "PM" : "AM"} - {time.hour+1}{time.min===0 ?"":":"+time.min}{time.hour>12 ? "PM" : "AM"}
               </Button>
             )) : null)
