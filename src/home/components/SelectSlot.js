@@ -14,13 +14,14 @@ const SelectSlot = props => {
         {
           props.items.map((item) => (
             item.available.map((time)=>(
-              console.log("Hours:",time.hour,"Mins: ",time.min)
+              //console.log("Hours:",time.hour,"Mins: ",time.min)
+              <Button inverse to={`/`}>
+                {time.hour}{time.min===0 ?"":":"+time.min}{time.hour>12 ? "PM" : "AM"} - {time.hour+1}{time.min===0 ?"":":"+time.min}{time.hour>12 ? "PM" : "AM"}
+              </Button>
             ))        
           ))
         }
-        <Button inverse to={`/`}>
-          TIME
-        </Button>
+        
       </div>
     </React.Fragment>
   )

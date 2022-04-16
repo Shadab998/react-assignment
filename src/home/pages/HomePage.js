@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Button from '../../shared/components/FormElements/Button';
 
 import SelectDate from '../components/SelectDate';
-import SelectSlot from '../components/SelectSlot';
+//import SelectSlot from '../components/SelectSlot';
 
 import './HomePage.css';
 
@@ -39,7 +39,7 @@ const HomePage = props => {
   return (
       <React.Fragment>
       <SelectDate items={items}/>
-      <SelectSlot items={items}/>
+      
       <div className='newline'></div>
       <Button  to={`/`}>Proceed to Pay</Button>
       </React.Fragment>
