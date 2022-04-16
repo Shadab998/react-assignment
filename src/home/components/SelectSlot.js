@@ -5,11 +5,10 @@ import Button from '../../shared/components/FormElements/Button';
 
 
 const SelectSlot = props => {
-  console.log(props.items[props.time_slot])
   
   return (
     <React.Fragment>
-      <h2>SelectSlot Works!</h2>
+      <h2>Select Slot</h2>
       <div style={{margin:"20px"}}>
         {
           props.items.map((item,index) =>(

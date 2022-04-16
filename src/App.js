@@ -2,8 +2,13 @@ import React, { useState, useEffect }  from 'react';
 
 import {
   BrowserRouter as Router,
+  Route,
+  Redirect,
+  Switch
 } from 'react-router-dom';
+
 import HomePage from './home/pages/HomePage';
+import Profile from './profile/pages/Profile';
 
 import MainNavigation from './shared/components/Navigation/MainNavigation';
 
@@ -59,10 +64,15 @@ const App = () => {
     <Router>
       <MainNavigation className={className}/>
         <div className={classNameBody}>
-        <h1 style={{padding:"20px 0px 0px 0px"}}>Book Demo Session Slot</h1>
-        <div className="line"/>
-        <br/>
-        <HomePage/>
+        <Switch>
+          <Route path="/" exact>
+            <HomePage/>
+          </Route>
+          <Route path="/profile" exact>
+            <Profile />
+          </Route>
+          <Redirect to="/" />
+        </Switch>
         </div>
     </Router>
 

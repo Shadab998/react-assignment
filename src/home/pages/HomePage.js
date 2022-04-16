@@ -37,10 +37,13 @@ const HomePage = props => {
   } else {
   return (
       <React.Fragment>
-      <SelectDate items={items}/>
-      
-      <div className='newline'></div>
-      <Button  to={`/`}>Proceed to Pay</Button>
+        <h1 style={{padding:"20px 0px 0px 0px"}}>Book Demo Session Slot</h1>
+        <div className="line"/>
+        <br/>
+        <SelectDate items={items}/>
+        
+        <div className='newline'></div>
+        <Button  to={`/`}>Proceed to Pay</Button>
       </React.Fragment>
   );}
 };

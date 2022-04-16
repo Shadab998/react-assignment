@@ -13,12 +13,16 @@
   
   .button:focus {
     outline: none;
+    background: #289125;
+    border-color: #193358;
+    color: white;
   }
   
   .button:hover,
   .button:active {
-    background: #db1b45;
-    border-color: #db1b45;
+    background: #289125;
+    border-color: #193358;
+    color: white;
   }
   
   .button--inverse {

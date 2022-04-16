@@ -5,7 +5,7 @@ import SelectSlot from './SelectSlot';
 
 const SelectDate = props => {
 
-  const [TIME, setTime] = useState(null);
+  const [TIME, setTime] = useState(0);
 
   const weekday = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
   const month = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
@@ -15,11 +15,9 @@ const SelectDate = props => {
     setTime(parseInt(event.currentTarget.getAttribute('id')))
   }
 
-
-console.log(TIME)
   return (
     <React.Fragment>
-      <h2>SelectDate Works!</h2>
+      <h2>Select Date</h2>
       <div style={{margin:"20px"}}>
         { 
           props.items.map((item,id) => (
