@@ -53,13 +53,14 @@ const App = () => {
     classNameBody = "main-browser"
   }
 
+  
 
   return (
     <Router>
       <MainNavigation className={className}/>
         <div className={classNameBody}>
         <h1 style={{padding:"20px 0px 0px 0px"}}>Book Demo Session Slot</h1>
-        <div class="line"/>
+        <div className="line"/>
         <br/>
         <HomePage/>
         </div>

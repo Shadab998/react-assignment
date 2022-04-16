@@ -1,6 +1,6 @@
 .button {
     font: inherit;
-    padding: 0.5rem 1.5rem;
+    padding: 0.5rem 1.2rem;
     border: 1px solid #193358;
     border-radius: 4px;
     background: #193358;
@@ -17,19 +17,20 @@
   
   .button:hover,
   .button:active {
-    background: #dc224d;
-    border-color: #dc224d;
+    background: #db1b45;
+    border-color: #db1b45;
   }
   
   .button--inverse {
     background: transparent;
-    color: #ff0055;
+    color: #193358;
   }
   
   .button--inverse:hover,
   .button--inverse:active {
     color: white;
-    background: #ff0055;
+    background: #289125;
+    border-color: #193358;
   }
   
   .button--danger {
@@ -59,3 +60,21 @@
   .button--big {
     font-size: 1.5rem;
   }
+
+  .button p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 12px;
+  }
+
+  .button .date {
+    font-size: 20px;
+  }
+
+  a.button.payment.button--default.undefined.undefined {
+    display: block;
+    margin-top: 25px;
+    width: fit-content;
+}
