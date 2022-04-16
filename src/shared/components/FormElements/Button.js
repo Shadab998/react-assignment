@@ -6,7 +6,9 @@ import './Button.css';
 const Button = props => {
   if (props.href) {
     return (
+      
       <a
+        id={props.id}
         className={`button button--${props.size || 'default'} ${props.inverse &&
           'button--inverse'} ${props.danger && 'button--danger'}`}
         href={props.href}
@@ -19,6 +21,7 @@ const Button = props => {
     return (
       <Link
         to={props.to}
+        id={props.id}
         exact={props.exact}
         className={`button button--${props.size || 'default'} ${props.inverse &&
           'button--inverse'} ${props.danger && 'button--danger'}`}
@@ -29,6 +32,7 @@ const Button = props => {
   }
   return (
     <button
+      id={props.id}
       className={`button button--${props.size || 'default'} ${props.inverse &&
         'button--inverse'} ${props.danger && 'button--danger'}`}
       type={props.type}

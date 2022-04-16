@@ -35,7 +35,6 @@ const HomePage = props => {
   } else if(!isLoaded) {
     return <div>Loading...</div>
   } else {
-    console.log(items);
   return (
       <React.Fragment>
       <SelectDate items={items}/>
