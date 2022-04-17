@@ -2,14 +2,14 @@ import React from 'react';
 
 import Button from '../../shared/components/FormElements/Button';
 
-
+import './SelectSlot.css';
 
 const SelectSlot = props => {
   
   return (
     <React.Fragment>
       <h2>Select Slot</h2>
-      <div style={{margin:"20px"}}>
+      <div className="scrolling-wrapper" style={{margin:"20px",overflow:"scroll"}}>
         {
           props.items.map((item,index) =>(
             (index === props.time_slot? item.available.map((time)=>(

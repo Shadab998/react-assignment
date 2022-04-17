@@ -28,11 +28,11 @@ const MainNavigation = props => {
       <span />
       <span />
     </button><h1 className="main-navigation__title">
-        <Link to="/">MentorPlus App</Link>
+    <Link to="/"><p style={{display:"inline-block"}}>Mentor</p><p style={{color:"#db1b45",display:"inline-block"}}>Plus</p></Link>
       </h1></>
   } else {
     content = <><h1 className="main-navigation__title">
-      <Link to="/">MentorPlus App</Link>
+      <Link to="/"><p style={{display:"inline-block"}}>Mentor</p><p style={{color:"#db1b45",display:"inline-block"}}>Plus</p></Link>
     </h1><button className="main-navigation__menu-btn" onClick={openDrawerHandler}>
     <span />
     <span />
@@ -58,14 +58,7 @@ const MainNavigation = props => {
       </BrowserView>
       <MobileView>
       <MainHeader className = {className}>
-        <h1 className="main-navigation__title">
-          <Link to="/">MentorPlus App</Link>
-        </h1>
-        <button className="main-navigation__menu-btn" onClick={openDrawerHandler}>
-          <span />
-          <span />
-          <span />
-        </button>
+        {content}
         
         <nav className="main-navigation__header-nav">
           <NavLinks />

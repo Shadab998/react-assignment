@@ -26,6 +26,10 @@
   color: #2e4971;
 }
 
+.main-navigation__title img {
+  height: 8%;
+}
+
 .main-navigation__header-nav {
   display: none;
 }
